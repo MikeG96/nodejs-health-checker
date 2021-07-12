@@ -35,6 +35,17 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.HealthcheckerDetailedCheck = exports.HealthcheckerSimpleCheck = void 0;
 var types_1 = require("../interfaces/types");
@@ -59,11 +70,12 @@ exports.HealthcheckerSimpleCheck = HealthcheckerSimpleCheck;
  * @param config ApplicationConfig
  * @return ApplicationHealthDetailed
  */
-function HealthcheckerDetailedCheck(config) {
+function HealthcheckerDetailedCheck(_a) {
+    var config = __rest(_a, []);
     return __awaiter(this, void 0, void 0, function () {
         var promisesList, start, results, integrations;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
+        return __generator(this, function (_b) {
+            switch (_b.label) {
                 case 0:
                     promisesList = [];
                     start = new Date().getTime();
@@ -88,7 +100,7 @@ function HealthcheckerDetailedCheck(config) {
                     });
                     return [4 /*yield*/, Promise.all(promisesList)];
                 case 1:
-                    results = _a.sent();
+                    results = _b.sent();
                     integrations = results.map(function (item) { return item; });
                     return [2 /*return*/, {
                             name: config.name || "",

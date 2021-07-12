@@ -29,7 +29,7 @@ export function HealthcheckerSimpleCheck(): ApplicationHealthSimple {
  * @param config ApplicationConfig
  * @return ApplicationHealthDetailed
  */
-export async function HealthcheckerDetailedCheck(config: ApplicationConfig): Promise<ApplicationHealthDetailed> {
+export async function HealthcheckerDetailedCheck({ ...config }: ApplicationConfig): Promise<ApplicationHealthDetailed> {
   const promisesList: Promise<Integration>[] = [];
   const start = new Date().getTime();
   config.integrations.forEach((item) => {

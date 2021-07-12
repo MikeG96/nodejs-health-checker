@@ -22,7 +22,7 @@ function checkMemcachedClient(config) {
             client.end();
             resolve({
                 status: false,
-                error: error,
+                error: error
             });
         });
         client.stats(function (error, status) {
