@@ -10,5 +10,5 @@ export declare function HealthcheckerSimpleCheck(): ApplicationHealthSimple;
  * @param config ApplicationConfig
  * @return ApplicationHealthDetailed
  */
-export declare function HealthcheckerDetailedCheck(config: ApplicationConfig): Promise<ApplicationHealthDetailed>;
+export declare function HealthcheckerDetailedCheck({ ...config }: ApplicationConfig): Promise<ApplicationHealthDetailed>;
 //# sourceMappingURL=healthchecker.d.ts.map
